@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"        
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="Register" table="register">
+        <id name="id">
+            <column name="id" sql-type="int"></column>
+            <generator class="increment" ></generator>
+        </id>
+        <property name="score" type="java.lang.Integer" column="score"/>
+        <many-to-one name="student" class="Student" column="id" cascade="all"></many-to-one>
+        <many-to-one name="course" class="Course" column="id" cascade="all"></many-to-one>
+    </class>
+</hibernate-mapping>
